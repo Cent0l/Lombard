@@ -14,7 +14,7 @@ services:
     networks:
       - spring-postgres-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U user -d lombardDB"]  # Określamy bazę danych
       interval: 10s
       timeout: 5s
       retries: 5
