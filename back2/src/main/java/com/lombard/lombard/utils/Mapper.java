@@ -44,6 +44,8 @@ public class Mapper {
         dto.setIdNumber(customer.getIdNumber());
         dto.setRegistrationDate(customer.getRegistrationDate());
         dto.setDoNotServe(customer.isDoNotServe());
+        
+        dto.setParentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null);
         return dto;
     }
 
@@ -84,6 +86,8 @@ public class Mapper {
         dto.setPhoneNumber(employee.getPhoneNumber());
         dto.setEmail(employee.getEmail());
         dto.setStatus(employee.getStatus());
+        
+        dto.setParentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null);
         return dto;
     }
 
@@ -166,6 +170,8 @@ public class Mapper {
         dto.setDescription(role.getDescription());
         dto.setPermissionsLevel(role.getPermissionsLevel());
         dto.setMaxBuy(role.getMaxBuy());
+        
+        dto.setParentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null);
         return dto;
     }
 
@@ -221,6 +227,8 @@ public class Mapper {
         dto.setFirstName(employee.getFirstName());
         dto.setLastName(employee.getLastName());
         dto.setRole(employee.getRole().getRoleName());
+        
+        dto.setParentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null);
         return dto;
     }
 
@@ -261,6 +269,8 @@ public class Mapper {
             dto.setItems(itemDTOs);
         }
 
+        
+        dto.setParentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null);
         return dto;
     }
 
@@ -299,7 +309,9 @@ public class Mapper {
 
        dto.setPrice(transactionItem.getPrice());
 
-       return dto;
+       
+        dto.setParentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null);
+        return dto;
    }
 
     public CategoryDTO toCategoryDTO(Category category) {
@@ -311,6 +323,8 @@ public class Mapper {
         dto.setId(category.getId());
         dto.setCategoryName(category.getCategoryName());
         dto.setDescription(category.getDescription());
+        
+        dto.setParentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null);
         return dto;
     }
 

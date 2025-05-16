@@ -8,6 +8,10 @@ import java.time.LocalDateTime;
 @Table(name = "Transaction_Items")
 public class TransactionItem {
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_item_id")

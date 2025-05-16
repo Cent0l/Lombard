@@ -20,4 +20,5 @@ public class UpdateCategoryDTO {
     public void setDescription(String description) {
         this.description = description;
     }
+    private Integer parentCategoryId;
 }
